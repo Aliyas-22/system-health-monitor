@@ -5,12 +5,13 @@ import psutil # import the lib from pypi
 # agar cpu usage threshold se zyada hua, email kar do
 
 def check_cpu_threshold():
-    cpu_threshold = int(input("Enter the CPU Threshold")) # DONE
+    cpu_threshold = int(input("Enter the CPU Threshold:")) # DONE
 
     current_cpu = psutil.cpu_percent(interval=1) # DONE
     print("Current CPU %: ",current_cpu)
     if current_cpu > cpu_threshold:  # DONE
         print("CPU Alert Email sent...")
+
     else:
         print("CPU in Safe state...")
 
