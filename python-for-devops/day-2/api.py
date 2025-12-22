@@ -1,10 +1,7 @@
-import requests 
+# import requests 
 
-url = 'https://jsonplaceholder.typicode.com/todos/1'
+# url = 'https://jsonplaceholder.typicode.com/todos/1'
 
-response=requests.get(url=url)
+# response=requests.get(url=url)
 
-for key,value in response.json().items():
-    if key=="completed":
-        if value == False:
-            print("the data is not completed")
+# for key,value in response.json().items():
