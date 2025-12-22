@@ -4,14 +4,12 @@ API_URL = 'https://api.restful-api.dev/objects'
 search_id = (input("enter the id from 1 to 12:  ").strip())
 response = requests.get(API_URL)
 
-# print(dir(response))
 
 data = response.json()
 
 for item in data:
     if item ["id"] == search_id:
         print("product name:",item["name"])
-        # print (item["data"].keys())
         if "Generation" in item["data"]:
             print("Generation:", item["data"]["Generation"])
 
@@ -20,7 +18,7 @@ for item in data:
         if "Price" in item["data"]:
             print("Price:",item["data"]["Price"])
         else:
-            print("Price:Price is not available")
+            print("Price:Price is not shown!")
 
         break
 else:
