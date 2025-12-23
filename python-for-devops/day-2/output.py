@@ -1,8 +1,39 @@
+# import requests
+# API_URL = "https://sunrisesunset.io/api/?lat=18.5204&lng=73.8567"
+# time = input("enter sunset or sunrise to see its timing: ")
+# response = requests.get(API_URL)
+# results = response.json()
+# print (results)
+
+# for item in results:
+#     if item ["date"] == time:
+#         print("its name:", item["date"])
+import requests
 import json
+ 
 
-with open("product_data.json", "r") as file:
-    product_data = json.load(file)
+try:
+    API_URL = 'https://api.sunrisesunset.io/json?lat=38.907192&lng=-77.036873'
+    time = input("what you want to see sunset , sunrise , date : ").strip().lower()
+    response = requests.get(API_URL)
+    output = response.json()
+    
+    with open("file.json", "r") as file:
+         stored_data = json.load(file)
 
-print("Product name:", product_data["name"])
-print("Generation:", product_data["Generation"])
-print("Price:", product_data["Price"])
+    # with open("sun_data.json", "w") as file:
+    #     json.dump(output, file, indent=4)
+    print("API data saved successfully into file.json.json")
+    # print("API data saved successfully into sun_data.json")
+    results = output["results"]
+    date = results["date"]
+    first_light = results["first_light"]
+    if time in results :
+            print(f"{time.capitalize()} time is :, {results[time]}")
+            # if time in date :
+            #     print(f"{date.capatalize()} date is :,{date[time]}")
+    else:
+         print("invalid input, please enter properly!")
+    # print(results)
+except Exception as e:
+    print("Error:", e)

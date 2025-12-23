@@ -20,5 +20,5 @@ for item in data:
             print("Price: Price is not shown!")
 
         break
-else:
+else: 
     print("id not found")
