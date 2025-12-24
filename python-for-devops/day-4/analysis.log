@@ -1,0 +1,7 @@
+INFO:aliya:here is the information
+ERROR:aliya:error message goes here
+ERROR:root:exceptional details:
+Traceback (most recent call last):
+  File "c:\Users\Aliya\Documents\visual studio\python-for-devops\python-for-devops\day-4\learning_analysis.py", line 25, in <module>
+    age = int(input("enter the age:"))
+ValueError: invalid literal for int() with base 10: 'hello'
